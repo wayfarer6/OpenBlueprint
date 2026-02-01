@@ -1,0 +1,42 @@
+### Python ###
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+### Conda / Virtual Environments ###
+# 가상환경 폴더 (사용자 설정에 따라 폴더명이 다를 수 있음)
+.conda/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+# 질문하신 conda 환경 관련 폴더
+conda/
+
+### Jupyter Notebook ###
+.ipynb_checkpoints
+
+### IDEs (VS Code, PyCharm) ###
+.vscode/
+.idea/
+
+### OS ###
+.DS_Store
+Thumbs.db
