@@ -29,15 +29,20 @@
 
 ### Create Conda 
 ```bash
-conda create --prefix ./conda python=3.13 -y
+conda create -n OpenBlueprint  python=3.13 -y
 
-conda activate ./conda
+conda activate OpenBlueprint
+
+# if clear command not working 
+# alias clear='/usr/bin/clear'
 ```
 
 ### Install Essential Packages
 
 ```bash
-conda install django djangorestframework -c conda-forge # conda 명령어로도 설치 가능!
+
+명령어로도 설치 가능!conda install django djangorestframework -c conda-forge # conda 
+conda install --file requirements.txt
 ```
 
 
@@ -53,3 +58,11 @@ OpenBlueprint/ (루트 폴더)
 ├── pages/             # 
 └── account/           # 로그인, 회원가입, 프로필 관리
 ```
+
+### Runs Server 
+
+
+```bash
+python3 manage.py runserver [port_numer]
+```
+
