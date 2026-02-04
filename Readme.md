@@ -29,12 +29,23 @@
 
 ### Create Conda 
 ```bash
-conda create -n OpenBlueprint  python=3.13 -y
+conda create --prefix ./OpenBlueprint_env  python=3.13 -y
 
-conda activate OpenBlueprint
+conda activate ./OpenBlueprint_env
 
 # if clear command not working 
 # alias clear='/usr/bin/clear'
+```
+
+#### Create Venv
+
+```bash
+# venv 생성
+python3.13 -m venv OpenBlueprint_venv
+
+# 환경 활성화
+source OpenBlueprint_venv/bin/activate
+
 ```
 
 ### Install Essential Packages

@@ -27,8 +27,9 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-# 질문하신 conda 환경 관련 폴더
+# 
 conda/
+OpenBlueprint_venv/
 
 ### Jupyter Notebook ###
 .ipynb_checkpoints
