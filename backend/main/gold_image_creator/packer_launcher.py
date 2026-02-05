@@ -73,6 +73,9 @@ ISO_CHECKSUM= {
 
 ### 일단 provider는 virtualbox 고정, 추후에 vmware, aws 등등 추가 예정~~~
 
+def isoDownloader(os_type,os_version):
+    pass
+
 def packer_hcl_creator(project_name,project,path,VPSImage,provider):
     time_stamp = datetime.now()
     filename = f"{project_name}_{VPSImage.vps_name}_{time_stamp.strftime('%Y%m%d_%H%M%S')}.pkr.hcl"
@@ -90,8 +93,8 @@ def packer_hcl_creator(project_name,project,path,VPSImage,provider):
     rendered_hcl = template.render(
             vm_name=f"{VPSImage.vps_name}-Packer-{time_stamp}-time",
             guest_os_type=os_key,
-            iso_url=
-            iso_checksum=
+            iso_url="Imagestore location"
+            iso_checksum="Imagestore location"
             cpus=VPSImage.cpu_cnt
             memory=VPSImage.ram_size
             disk_size=VPSImage.disk_size

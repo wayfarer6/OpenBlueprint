@@ -1,0 +1,33 @@
+# Basic setup
+lang {{local | default('en_US.UTF-8') }} 
+keyboard us
+timezone {{local | default('America/New_York')}}
+rootpw --plaintext your_password_here
+text
+install
+
+# Network settings
+network --bootproto=dhcp --device=link --activate
+
+# Installation media
+cdrom
+
+# Partitioning
+zerombr
+clearpart --all --initlabel
+autopart
+
+# Bootloader
+bootloader --location=mbr
+
+# Security
+firewall --enabled --ssh
+selinux --enforcing
+
+# End Installation
+reboot
+
+%packages
+@^minimal-environment
+@core
+%end

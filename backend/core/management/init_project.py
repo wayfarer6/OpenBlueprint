@@ -3,8 +3,12 @@ import os
 def init_project(root_dir,project_name):
     
     project_path = os.path.join(root_dir,project_name)
-
+    image_store = os.path.join(project_path,"image_store")
+    
     os.makedirs(project_path, exist_ok=True)
+    os.makedirs(image_store, exist_ok=True)
+
+    
 
     file_list = [
         "blueprint.cf",
