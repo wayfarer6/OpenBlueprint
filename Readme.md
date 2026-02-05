@@ -35,9 +35,9 @@
 
 ### Create Conda 
 ```bash
-conda create --prefix ./OpenBlueprint_env  python=3.13 -y
+conda create --prefix ./AethraPrint_env  python=3.13 -y
 
-conda activate ./OpenBlueprint_env
+conda activate ./AethraPrint_env
 
 # if clear command not working 
 # alias clear='/usr/bin/clear'
@@ -47,10 +47,10 @@ conda activate ./OpenBlueprint_env
 
 ```bash
 # venv 생성
-python3.13 -m venv OpenBlueprint_venv
+python3.13 -m venv AethraPrint_env
 
 # 환경 활성화
-source OpenBlueprint_venv/bin/activate
+source AethraPrint_env/bin/activate
 
 ```
 
@@ -70,7 +70,7 @@ conda install --file requirements.txt
 ### Project Structure
 
 ```bash
-OpenBlueprint/ (루트 폴더)
+AethraPrint/ (루트 폴더)
 ├── manage.py          # 실행 파일
 ├── open_blueprint/    # 설정 폴더 (settings.py, 전역 urls.py)
 ├── core/              # 공통 유틸리티, 추상 모델 등

@@ -5,7 +5,7 @@ const AboutPage = () =>{
    return (
     // 3. JSX(HTML 모양의 코드) 반환
     <main className="p-8">
-      <h1 className="text-2xl font-bold">OpenBlueprint Project</h1>
+      <h1 className="text-2xl font-bold">AethraPrint Project</h1>
       <p className="mt-4 text-gray-600">
         Welcome
       </p>

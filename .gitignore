@@ -29,7 +29,7 @@ env.bak/
 venv.bak/
 # 
 conda/
-OpenBlueprint_venv/
+AethraPrint_env/
 
 ### Jupyter Notebook ###
 .ipynb_checkpoints
