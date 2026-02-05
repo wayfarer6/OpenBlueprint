@@ -3,13 +3,13 @@ from django.db import models
 
 # Project Model
 
-class BlueprintProject(models.Model):
+class AethraPrint(models.Model):
     project_name = CharField(max_length=100, unique=True)
 
     owner = model.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL
-        related_name='blueprint_projects'
+        on_delete=models.SET_NULL,
+        related_name='aethraprint_projects'
     )
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -77,3 +77,38 @@ class Node(models.Model):
     def edit_ip(new_ip):
         node_ip = new_ip
 
+
+
+# NVD(National Vulnerability Database)에 있는 보안 정보
+
+class CveMain(models.Model):
+    cve_id = models.CharField(max_length=20,unique=True)
+    description = models.TextField()
+    published_date = models.DateTimeField()
+    last_modified = models.DateTimeField()
+    source_id = models.CharField(max_length=50)
+
+class CvssV3Metrics(models.Model):
+    cve = models.ForeignKey(CveMain, on_delete=models.CASCADE, related_name='cvss_v3_metrics')
+    base_score = models.DecimalField(max_digits=3, decimal_places=1)  # 7.5, 10.0 등
+    base_severity = models.CharField(max_length=20)  # CRITICAL, HIGH, MEDIUM 등
+    vector_string = models.CharField(max_length=150)
+    exploitability_score = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
+    impact_score = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
+    # 분석 주체 (NVD, RedHat 등)
+    source = models.CharField(max_length=100)
+    type = models.CharField(max_length=50)  # Primary, Secondary 등
+
+
+class AffectedProducts(models.Model):
+    cve = models.ForeignKey(CveMain, on_delete=models.CASCADE, related_name='affected_products')
+    # CPE 2.3 형식을 저장 (예: cpe:2.3:a:microsoft:word:2016:*:*:*:*:*:*:*)
+    cpe_match = models.CharField(max_length=255)
+    vulnerable = models.BooleanField(default=True)
+    version_start_including = models.CharField(max_length=50, null=True, blank=True)
+    version_end_excluding = models.CharField(max_length=50, null=True, blank=True)
+
+class CveReferences(models.Model):
+    cve = models.ForeignKey(CveMain, on_delete=models.CASCADE, related_name='references')
+    url = models.URLField(max_length=500)
+    source = models.CharField(max_length=100, null=True, blank=True)

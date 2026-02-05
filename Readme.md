@@ -28,6 +28,53 @@
 - Unified Control: We streamline the orchestration of complex tools like Helm, Ansible, and Packer into a single, intuitive interface.
 
 
+## Key Features (KO)
+
+- Ansible 및 Packer를 이용한 VPS 골드 이미지 생성
+    - 운영체제 최적화 및 보안 설정이 완료된 표준화된 서버 이미지(Gold Image) 제작 자동화.
+
+- 네트워크 토폴로지 디자이너
+    - 복잡한 네트워크 구조를 시각적으로 설계하고 관리하는 도구 제공.
+
+- Code to Pod (코드에서 포드로)
+    - 소스 코드를 쿠버네티스(Kubernetes) 포드 단위로 즉시 배포하는 워크플로우 지원.
+
+- CVSS DB 연동 보안 스캐너
+    - 최신 CVSS(Common Vulnerability Scoring System) 데이터베이스를 기반으로 인프라의 취약점을 분석하고 위험도 산출.
+
+- 인프라 플레이북 및 위키(WIKI) 자동 생성
+    - 구축된 인프라 설정을 바탕으로 실행 가능한 플레이북과 기술 문서를 자동으로 생성.
+
+- 인프라 디퍼(Infra Differ, Git Diff 방식)
+    - 초기 설계 상태와 현재 상태를 비교 분석(예: .bashrc 설정 변경점 확인 등 형상 관리).
+
+- 멀티 CSP(Cloud Service Provider) 인프라 배포 지원
+    - AWS, Azure, GCP 등 다양한 클라우드 환경에 대한 통합 배포 기능.
+
+- GNS3 기반 테스트 인프라 구축
+    - 가상 네트워크 시뮬레이터(GNS3)를 활용하여 실제 배포 전 테스트 환경 구현.
+
+- 로그 기능 지원
+
+## Key Features (EN)
+- Gold Image Generation for VPS with Ansible, Packer
+
+- Network Topology Designer 
+
+- Code to Pod
+
+- Security Scanner with CVSS DB
+
+- Infra Playbook and WIKI Generation
+
+- Infra Differ(like git diff)
+    - check .bashrc and others to check difference form initial Design
+
+- Multi CSP Infra Deploy Support
+
+- Test Infra Generation with GNS3
+
+- Support Logging
 
 ## Prerequisites / 사전 요구 사항
 
